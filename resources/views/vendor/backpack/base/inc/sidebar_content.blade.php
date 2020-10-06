@@ -7,11 +7,11 @@
 
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('tag') }}'><i class='nav-icon la la-key'></i> Từ Khóa </a></li>
 
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}\"><i class="nav-icon la la-files-o"></i> <span>Quản lý Files</span></a></li>
+
 @if (backpack_user()->hasRole('admin'))
 
     <li class='nav-item'><a class='nav-link' href='{{ backpack_url('setting') }}'><i class='nav-icon la la-quora'></i>Settings</a></li>
-
-    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}\"><i class="nav-icon la la-files-o"></i> <span>{{ trans('backpack::crud.file_manager') }}</span></a></li>
 
     <!-- Users, Roles, Permissions -->
     <li class="nav-item nav-dropdown">
