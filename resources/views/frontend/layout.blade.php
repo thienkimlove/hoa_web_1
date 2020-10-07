@@ -9,8 +9,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{$meta_url}}">
     <meta property="og:image" content="{{$meta_image}}">
-    <meta property="og:site_name" content="Cà gai leo Tuệ Linh">
-    <meta property="fb:app_id" content="188252524956805" />
+    <meta property="og:site_name" content="{{ \App\Helpers::configGet('website_name') }}">
+    <meta property="fb:app_id" content="{{ \App\Helpers::configGet('facebook_app_id') }}" />
 
     <meta name="twitter:card" content="Card">
     <meta name="twitter:url" content="{{$meta_url}}">
@@ -29,7 +29,7 @@
     <meta name="DESCRIPTION" content="{{$meta_desc}}"/>
     <meta name="KEYWORDS" content="{{$meta_keywords}}"/>
     <meta name="ROBOTS" content="index,follow"/>
-    <meta name="AUTHOR" content="Cà gai leo Tuệ Linh"/>
+    <meta name="AUTHOR" content="{{ \App\Helpers::configGet('website_name') }}"/>
     <meta name="RESOURCE-TYPE" content="DOCUMENT"/>
     <meta name="DISTRIBUTION" content="GLOBAL"/>
     <meta name="COPYRIGHT" content="Copyright 2013 by Goethe"/>
@@ -56,9 +56,9 @@
                     </form>
                 </div>
             </li>
-            <li><a href="#" class="iYou">Youtube</a></li>
-            <li><a href="#" class="iSkype">Skype</a></li>
-            <li><a href="#" class="iGoogle">Google</a></li>
+            <li><a href="{{ \App\Helpers::configGet('youtube_link') }}" class="iYou">Youtube</a></li>
+            <li><a href="{{ \App\Helpers::configGet('skype_link') }}" class="iSkype">Skype</a></li>
+            <li><a href="{{ \App\Helpers::configGet('google_link') }}" class="iGoogle">Google</a></li>
         </ul>
     </div>
 </div>

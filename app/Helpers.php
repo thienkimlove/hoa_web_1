@@ -113,7 +113,7 @@ class Helpers
             'key'         => 'website_logo_pc',
             'name'        => 'Website Logo Pc',
             'description' => 'For SEO',
-            'value'       => '',
+            'value'       => 'uploads/logo.png',
             'field'       => '{"name":"value","label":"Value","type":"browse"}', //text, textarea
             'active'      => 1,
         ],
@@ -122,10 +122,53 @@ class Helpers
             'key'         => 'website_logo_sp',
             'name'        => 'Website Logo Mobile',
             'description' => 'For SEO',
-            'value'       => '',
+            'value'       => 'uploads/logosp.png',
             'field'       => '{"name":"value","label":"Value","type":"browse"}', //text, textarea
             'active'      => 1,
         ],
+
+        [
+            'key'         => 'facebook_app_id',
+            'name'        => 'Facebook App ID',
+            'description' => 'For SEO',
+            'value'       => '188252524956805',
+            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
+            'active'      => 1,
+        ],
+        [
+            'key'         => 'website_name',
+            'name'        => 'Website Name',
+            'description' => 'For SEO',
+            'value'       => 'Suckhoe248.com',
+            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
+            'active'      => 1,
+        ],
+
+        [
+            'key'         => 'youtube_link',
+            'name'        => 'Youtube Link',
+            'description' => 'For SEO',
+            'value'       => '#',
+            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
+            'active'      => 1,
+        ],
+        [
+            'key'         => 'google_link',
+            'name'        => 'Google Link',
+            'description' => 'For SEO',
+            'value'       => '#',
+            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
+            'active'      => 1,
+        ],
+        [
+            'key'         => 'skype_link',
+            'name'        => 'Skype Link',
+            'description' => 'For SEO',
+            'value'       => '#',
+            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
+            'active'      => 1,
+        ],
+
 
     ];
 
