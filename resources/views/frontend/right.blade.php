@@ -12,7 +12,7 @@
                     <ul class="listVideo">
                         @foreach ($rightVideos as $rightVideo)
                             <li>
-                                <a href="{{ url('video/'.$rightVideo->slug.'.html') }}">
+                                <a href="{{ url('video/'.$rightVideo->slug) }}">
                                     {{ $rightVideo->name }}
                                 </a>
                             </li>
