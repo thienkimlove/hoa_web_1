@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Models\Video;
 use Backpack\Settings\app\Models\Setting;
 use Illuminate\Http\Request;
 use Watson\Sitemap\Facades\Sitemap;
@@ -77,6 +79,92 @@ class FrontendController extends Controller
         } else {
             return redirect('/');
         }
+    }
+
+    public function video($value = null)
+    {
+        $page = 'video';
+
+        $meta = [];
+
+        $meta['meta_title'] = Setting::get('meta_index_title');
+        $meta['meta_desc'] = Setting::get('meta_index_desc');
+        $meta['meta_keywords'] = Setting::get('meta_index_keywords');
+        $meta['meta_image'] = url('/frontend/images/logo.png');
+        $meta['meta_url'] = route('frontend.video');
+
+        $mainVideo = null;
+        $videos = Video::latest('updated_at')->paginate(12);
+        $latestVideos = Video::latest('updated_at')->limit(5)->get();
+        if ($videos->count() > 0) {
+            $mainVideo = $videos->first();
+        }
+
+        if ($value) {
+            $mainVideo = Video::findBySlug($value);
+            if ($mainVideo) {
+                $meta_title = $mainVideo->name;
+                $meta_desc = $mainVideo->desc;
+                $meta_keywords = "";
+
+                $meta['meta_title'] = $meta_title;
+                $meta['meta_desc'] = $meta_desc;
+                $meta['meta_keywords'] = $meta_keywords;
+                $meta['meta_url'] = route('frontend.video', $mainVideo->slug);
+            } else {
+                return redirect('/');
+            }
+        }
+
+        return view('frontend.video', compact('videos', 'mainVideo', 'latestVideos', 'page'))->with($meta);
+
+    }
+
+    public function contact()
+    {
+        $page = 'lien-he';
+        $meta = [];
+
+        $meta['meta_title'] = Setting::get('meta_index_title');
+        $meta['meta_desc'] = Setting::get('meta_index_desc');
+        $meta['meta_keywords'] = Setting::get('meta_index_keywords');
+        $meta['meta_image'] = url('/frontend/images/logo.png');
+        $meta['meta_url'] = route('frontend.contact');
+
+
+        return view('frontend.contact', compact('page'))->with($meta);
+    }
+
+    public function saveContact(Request $request)
+    {
+        $data = $request->all();
+        $redirectUrl = null;
+
+        if (isset($data['redirect_url'])) {
+            $redirectUrl = $data['redirect_url'];
+            unset($data['redirect_url']);
+        }
+
+        if (!empty($data['name']) && !empty($data['email']) && !empty($data['content']) && !empty($data['phone'])) {
+
+            Contact::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'phone' => $data['phone'],
+                'content' => $data['content'],
+                'status' => 0
+            ]);
+        } else {
+            //\Log::info($data);
+        }
+
+
+        if ($redirectUrl) {
+            return redirect()->to($redirectUrl.'?success=1');
+        }
+
+        return redirect('/');
+
     }
 
     public function main($value)

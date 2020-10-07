@@ -75,6 +75,18 @@ class PostCrudController extends CrudController
             'label' => 'Trạng thái'
         ]);
 
+        CRUD::addColumn([
+            'name' => 'is_highlight_index',
+            'type' => 'boolean',
+            'label' => 'Nổi bật?'
+        ]);
+
+        CRUD::addColumn([
+            'name' => 'is_focus_index',
+            'type' => 'boolean',
+            'label' => 'Tiêu điểm?'
+        ]);
+
         CRUD::column('views')->type('number')->label('Lượt xem');
 
         CRUD::addFilter([
@@ -117,7 +129,10 @@ class PostCrudController extends CrudController
             'attribute' => 'name',
             'model' => 'App\Models\Category',
             'type' => 'select2',
-            'label' => 'Chuyên mục'
+            'label' => 'Chuyên mục',
+            'options'   => (function ($query) {
+                return $query->whereDoesntHave('children')->orderBy('name', 'ASC')->get();
+            }), //  you can use this to filter the results show in the select
         ]);
         CRUD::addField([
             'label'     => 'Từ Khóa',
@@ -132,6 +147,18 @@ class PostCrudController extends CrudController
             'name' => 'status',
             'type' => 'boolean',
             'label' => 'Trạng thái'
+        ]);
+
+        CRUD::addField([
+            'name' => 'is_highlight_index',
+            'type' => 'boolean',
+            'label' => 'Nổi bật?'
+        ]);
+
+        CRUD::addField([
+            'name' => 'is_focus_index',
+            'type' => 'boolean',
+            'label' => 'Tiêu điểm?'
         ]);
 
 

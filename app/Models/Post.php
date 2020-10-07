@@ -42,7 +42,9 @@ class Post extends Model
         'content',
         'image',
         'views',
-        'status'
+        'status',
+        'is_highlight_index',
+        'is_focus_index'
     ];
     // protected $hidden = [];
     // protected $dates = [];

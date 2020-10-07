@@ -40,33 +40,111 @@
             </a>
         </h1>
         <ul id="globalNav" class="pc">
-            <li><a href="index.html" class="active">Trang chủ</a></li>
-            <li><a href="ctunhien.html">VITAMIN C<br>TỰ NHIÊN</a></li>
             <li>
-                <a href="vitamin.html">Vitamin C</a>
-                <ul>
-                    <li><a href="cNattu.html">C NATTU</a></li>
-                    <li><a href="ckids.html">C NATTU KIDS</a></li>
-                </ul>
+                <a class="{{(isset($page) && $page == 'index') ? 'active' : ''}}" href="{{url('/')}}" title="">TRANG CHỦ</a>
             </li>
-            <li><a href="tintuc.html">Tin tức</a></li>
-            <li>
-                <a href="methongthai.html">GÓC MẸ <br>THÔNG THÁI</a>
-                <ul>
-                    <li><a href="">Bệnh trẻ thường gặp</a></li>
-                    <li><a href="">Dược liệu</a></li>
-                    <li><a href="">Nghiên cứu lâm sàng</a></li>
-                </ul>
-            </li>
-            <li><a href="videos.html">Videos</a></li>
-            <li><a href="cauhoi.html">CÂU HỎI <br>THƯỜNG GẶP</a></li>
-            <li><a href="lienhe.html">Liên hệ</a></li>
+
+            @if ($headerCategories = \App\Helpers::getMainCategories())
+                @foreach ($headerCategories as $headerCategory)
+                    <li>
+                        <a class="{{(isset($page) && ($page == $headerCategory->slug || in_array($page, $headerCategory->children->pluck('slug')->all()))) ? 'active' : ''}}" href="{{url($headerCategory->slug)}}">{{$headerCategory->name}}</a>
+                        @if ($headerCategory->children->count() > 0)
+                            <ul>
+                                @foreach ($headerCategory->children as $childCategory)
+                                    <li><a class="{{(isset($page) && $page == $childCategory->slug) ? 'active' : ''}}" href="{{url($childCategory->slug)}}">{{$childCategory->name}}</a></li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </li>
+                @endforeach
+            @endif
+
+            <li><a href="{{ route('frontend.video') }}">Videos</a></li>
+            <li><a href="{{ route('frontend.contact') }}">Liên hệ</a></li>
         </ul>
         <a href="#" title="Menu" class="sp btnMenu" id="btnMenu">Menu</a>
     </div>
 </header>
 <!-- /endHeader -->
-
+<section class="boxSlidePage bg">
+    <div class="container">
+        <h3 class="globalTitle noneAfter">
+            <a href="#">
+                <span class="highLight">&nbsp;</span>
+                <span class="bgLight">Tiêu điểm</span>
+            </a>
+        </h3>
+        <div class="listSlidePage clearFix">
+            <div class="owl-carousel" id="slidePage">
+                <div class="item wow slideInLeft" data-wow-duration="0.8s" data-wow-delay="1s">
+                    <a href="" title="">
+                        <img src="imgs/temp/share01.jpg" width="274" height="174" alt=""/>
+                    </a>
+                    <h3>
+                        <a href="#">
+                            HỆ MIỄN DỊCH KHÔNG PHẢI LÀ THỨ CÓ SẴN
+                        </a>
+                    </h3>
+                    <p>
+                        Bên cạnh sự cân đối 4 nhóm vi chất dinh dưỡng thì phụ huynh cũng cần lưu tâm đến việc bổ sung các dưỡng chất tăng cường hệ miễn dịch cho trẻ. đến việc bổ sung các dưỡng chất tăng cường hệ miễn dịch cho trẻ.
+                    </p>
+                </div>
+                <div class="item wow slideInLeft" data-wow-duration="0.8s" data-wow-delay="1s">
+                    <a href="" title="">
+                        <img src="imgs/temp/share01.jpg" width="274" height="174" alt=""/>
+                    </a>
+                    <h3>
+                        <a href="#">
+                            HỆ MIỄN DỊCH KHÔNG PHẢI LÀ THỨ CÓ SẴN
+                        </a>
+                    </h3>
+                    <p>
+                        Bên cạnh sự cân đối 4 nhóm vi chất dinh dưỡng thì phụ huynh cũng cần lưu tâm đến việc bổ sung các dưỡng chất tăng cường hệ miễn dịch cho trẻ. đến việc bổ sung các dưỡng chất tăng cường hệ miễn dịch cho trẻ.
+                    </p>
+                </div>
+                <div class="item wow slideInRight" data-wow-duration="1s" data-wow-delay="1s">
+                    <a href="" title="">
+                        <img src="imgs/temp/share01.jpg" width="274" height="174" alt=""/>
+                    </a>
+                    <h3>
+                        <a href="#">
+                            HỆ MIỄN DỊCH KHÔNG PHẢI LÀ THỨ CÓ SẴN
+                        </a>
+                    </h3>
+                    <p>
+                        Bên cạnh sự cân đối 4 nhóm vi chất dinh dưỡng thì phụ huynh cũng cần lưu tâm đến việc bổ sung các dưỡng chất tăng cường hệ miễn dịch cho trẻ. đến việc bổ sung các dưỡng chất tăng cường hệ miễn dịch cho trẻ.
+                    </p>
+                </div>
+                <div class="item wow slideInRight" data-wow-duration="1s" data-wow-delay="1s">
+                    <a href="" title="">
+                        <img src="imgs/temp/share01.jpg" width="274" height="174" alt=""/>
+                    </a>
+                    <h3>
+                        <a href="#">
+                            HỆ MIỄN DỊCH KHÔNG PHẢI LÀ THỨ CÓ SẴN
+                        </a>
+                    </h3>
+                    <p>
+                        Bên cạnh sự cân đối 4 nhóm vi chất dinh dưỡng thì phụ huynh cũng cần lưu tâm đến việc bổ sung các dưỡng chất tăng cường hệ miễn dịch cho trẻ. đến việc bổ sung các dưỡng chất tăng cường hệ miễn dịch cho trẻ.
+                    </p>
+                </div>
+                <!-- <div class="item">
+                  <a href="" title="">
+                    <img src="imgs/temp/share01.jpg" width="274" height="174" alt=""/>
+                  </a>
+                  <h3>
+                    <a href="#">
+                      HỆ MIỄN DỊCH KHÔNG PHẢI LÀ THỨ CÓ SẴN
+                    </a>
+                  </h3>
+                  <p>
+                    Bên cạnh sự cân đối 4 nhóm vi chất dinh dưỡng thì phụ huynh cũng cần lưu tâm đến việc bổ sung các dưỡng chất tăng cường hệ miễn dịch cho trẻ. đến việc bổ sung các dưỡng chất tăng cường hệ miễn dịch cho trẻ.
+                  </p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
 <section class="section mb0">
     <div class="container">
         @yield('content')
@@ -86,14 +164,20 @@
             </div>
             <div class="areaLink">
                 <ul class="listCategory clearFix">
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">VITAMIN C TỰ NHIÊN</a></li>
-                    <li><a href="#">Vitamin C</a></li>
-                    <li><a href="#">TIN TỨC</a></li>
-                    <li><a href="#">GÓC MẸ THÔNG THÁI</a></li>
-                    <li><a href="#">Video</a></li>
-                    <li><a href="#">CÂU HỎI THƯỜNG GẶP</a></li>
-                    <li><a href="#">LIÊN HỆ</a></li>
+                    <li>
+                        <a class="{{(isset($page) && $page == 'index') ? 'active' : ''}}" href="{{url('/')}}" title="">TRANG CHỦ</a>
+                    </li>
+
+                    @if ($headerCategories = \App\Helpers::getMainCategories())
+                        @foreach ($headerCategories as $headerCategory)
+                            <li>
+                                <a class="{{(isset($page) && ($page == $headerCategory->slug || in_array($page, $headerCategory->children->pluck('slug')->all()))) ? 'active' : ''}}" href="{{url($headerCategory->slug)}}">{{$headerCategory->name}}</a>
+                            </li>
+                        @endforeach
+                    @endif
+
+                    <li><a href="{{ route('frontend.video') }}">Videos</a></li>
+                    <li><a href="{{ route('frontend.contact') }}">Liên hệ</a></li>
                 </ul>
             </div>
         </div>

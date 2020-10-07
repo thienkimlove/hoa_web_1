@@ -9,6 +9,8 @@
 
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('video') }}'><i class='nav-icon la la-video-camera'></i> Các Video </a></li>
 
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('contact') }}'><i class='nav-icon la la-file-contract'></i> Liên Hệ </a></li>
+
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}\"><i class="nav-icon la la-files-o"></i> <span>Quản lý Files</span></a></li>
 
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('setting') }}'><i class='nav-icon la la-quora'></i> Các Thiết Lập </a></li>
@@ -24,6 +26,4 @@
             <li class="nav-item"><a class="nav-link" href="{{ backpack_url('permission') }}"><i class="nav-icon la la-key"></i> <span>Permissions</span></a></li>
         </ul>
     </li>
-
-
 @endif
