@@ -203,8 +203,10 @@ class FrontendController extends Controller
 
             if ($category) {
 
+                $cateIds = ($category->children->count() > 0) ? $category->children->pluck('id')->all() : [$category->id];
+
                 $posts = Post::publish()
-                    ->whereIn('category_id', $category->id)
+                    ->whereIn('category_id', $cateIds)
                     ->latest('updated_at')
                     ->paginate(10);
 

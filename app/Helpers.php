@@ -71,12 +71,11 @@ class Helpers
         return 'https://img.youtube.com/vi/'.$youtubeVideoId.'/0.jpg';
     }
 
-    public static function getEmberCodeYoutube($url)
+    public static function getEmberCodeYoutube($url, $w = 560, $h = 315)
     {
-        $youtubeVideoId = self::getYouTubeId($url, $width = 560, $height = 315);
+        $youtubeVideoId = self::getYouTubeId($url);
 
-
-        return '<iframe width="'.$width.'" height="'.$height.'" src="https://www.youtube.com/embed/'.$youtubeVideoId.'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        return '<iframe width="'.$w.'" height="'.$h.'" src="https://www.youtube.com/embed/'.$youtubeVideoId.'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
     }
 
     public static function getRightVideos()

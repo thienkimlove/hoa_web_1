@@ -6,7 +6,7 @@
             </h3>
             @if ($firstVideos = $rightVideos->shift())
                 <div class="content">
-                    {!! \App\Helpers::getEmberCodeYoutube($firstVideos->link) !!}
+                    {!! \App\Helpers::getEmberCodeYoutube($firstVideos->link, '100%', 250) !!}
 
                     @if ($rightVideos->count() > 0)
                     <ul class="listVideo">
