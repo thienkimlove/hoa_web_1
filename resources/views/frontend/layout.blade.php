@@ -140,10 +140,9 @@
         <div class="boxFooter clearFix">
             <div class="areaSocial">
                 <ul class="listSocial clearFix">
-                    <li><a href="#" class="se">Search</a></li>
-                    <li><a href="#" class="yu">Youtube</a></li>
-                    <li><a href="#" class="sk">Skype</a></li>
-                    <li><a href="#" class="go">googleplus</a></li>
+                    <li><a href="{{ \App\Helpers::configGet('youtube_link') }}" class="yu">Youtube</a></li>
+                    <li><a href="{{ \App\Helpers::configGet('skype_link') }}" class="sk">Skype</a></li>
+                    <li><a href="{{ \App\Helpers::configGet('google_link') }}" class="go">googleplus</a></li>
                 </ul>
             </div>
             <div class="areaLink">
