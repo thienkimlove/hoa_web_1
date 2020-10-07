@@ -108,6 +108,15 @@ class Helpers
             'active'      => 1,
         ],
 
+        [
+            'key'         => 'website_logo',
+            'name'        => 'Website Logo',
+            'description' => 'For SEO',
+            'value'       => '',
+            'field'       => '{"name":"value","label":"Value","type":"image"}', //text, textarea
+            'active'      => 1,
+        ],
+
     ];
 
     public static function getMainCategories()
