@@ -6,11 +6,11 @@
             <div class="contentLeft">
                 <ul class="breadCrumb clearFix">
                     <li><a href="{{ url('/') }}">Trang chủ</a></li>
-                    <li class="active">{{ $category->name }}</li>
+                    <li class="active">Tìm kiếm với từ khóa {{ $keyword }}</li>
                 </ul>
                 <div class="boxNews clearFix">
                     <h3 class="globalTitle">
-                        <a href="{{ url($category->slug) }}">{{ $category->name }}</a>
+                        <a href="{{ url('search/?q='.$keyword) }}">Tìm kiếm với từ khóa {{ $keyword }}</a>
                     </h3>
                     @if ($firstPost = $posts->shift())
                         <div class="topNews clearFix">

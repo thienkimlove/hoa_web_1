@@ -66,7 +66,7 @@ class FrontendController extends Controller
 
 
             $keyword = $request->get('q');
-            $posts = Post::publish()->where('title', 'LIKE', '%' . $keyword . '%')->paginate(10);
+            $posts = Post::publish()->where('name', 'LIKE', '%' . $keyword . '%')->paginate(10);
 
             $meta = [];
             $meta['meta_title'] = 'Tìm kiếm cho từ khóa ' . $keyword;

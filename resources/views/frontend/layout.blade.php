@@ -16,8 +16,8 @@
             <li>
                 <a href="#" class="iSearch">Search</a>
                 <div class="box-find" id="box-find">
-                    <form>
-                        <input type="text" placeholder="Từ khóa tìm kiếm" name="keyword" class="txt"/>
+                    <form action="{{ url('search') }}" method="GET">
+                        <input type="text" placeholder="Từ khóa tìm kiếm" name="q" class="txt"/>
                         <input type="submit" value="" name="submit" class="btn-find"/>
                     </form>
                 </div>
