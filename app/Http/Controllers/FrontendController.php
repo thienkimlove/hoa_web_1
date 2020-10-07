@@ -191,7 +191,7 @@ class FrontendController extends Controller
                 $meta['meta_title'] = $post->name;
                 $meta['meta_desc'] = $post->desc;
                 $meta['meta_keywords'] = ($post->tagList) ? implode(',', $post->tagList) : null;
-                $meta['meta_image'] = url('img/cache/120x120/'.$post->image);
+                $meta['meta_image'] = url($post->image);
                 $meta['meta_url'] = route('frontend.main', $post->slug.'.html');
 
                 return view('frontend.post', compact('post', 'latestNews', 'page'))->with($meta);
