@@ -113,4 +113,9 @@ class Helpers
             ->get();
     }
 
+    public static function getImageUrlBySize($path, $w, $h)
+    {
+        return url('img/cache/'.$w.'x'.$h.'/'.str_replace('uploads/', '', $path));
+    }
+
 }

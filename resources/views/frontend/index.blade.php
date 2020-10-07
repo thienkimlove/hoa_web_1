@@ -13,7 +13,7 @@
                         @foreach ($latest3Posts as $latest3Post)
                             <div class="item">
                                 <a href="#" class="thumb">
-                                    <img src="{{ url('img/cache/130x80/'.str_replace('uploads/', '', $latest3Post->image)) }}" alt="{{ $latest3Post->name }}">
+                                    <img src="{{ \App\Helpers::getImageUrlBySize($latest3Post->image, 130, 80)  }}" alt="{{ $latest3Post->name }}">
 
                                 </a>
                                 <p>
