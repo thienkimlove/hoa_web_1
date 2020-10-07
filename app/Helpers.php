@@ -113,7 +113,7 @@ class Helpers
             'name'        => 'Website Logo',
             'description' => 'For SEO',
             'value'       => '',
-            'field'       => '{"name":"value","label":"Value","type":"image"}', //text, textarea
+            'field'       => '{"name":"value","label":"Value","type":"browse"}', //text, textarea
             'active'      => 1,
         ],
 
