@@ -21,7 +21,7 @@ class FrontendController extends Controller
         $meta['meta_title'] = Setting::get('meta_index_title');
         $meta['meta_desc'] = Setting::get('meta_index_desc');
         $meta['meta_keywords'] = Setting::get('meta_index_keywords');
-        $meta['meta_image'] = url('/frontend/images/logo.png');
+        $meta['meta_image'] = url(Setting::get('website_logo_pc'));
         $meta['meta_url'] = url('/');
 
         return view('frontend.index', compact('page'))->with($meta);
@@ -50,7 +50,7 @@ class FrontendController extends Controller
             $meta['meta_title'] = $meta_title;
             $meta['meta_desc'] = $meta_desc;
             $meta['meta_keywords'] = $meta_keywords;
-            $meta['meta_image'] = url('/frontend/images/logo.png');
+            $meta['meta_image'] = url(Setting::get('website_logo_pc'));
             $meta['meta_url'] =route('frontend.tag', $value);
 
             return view('frontend.tag', compact('posts', 'tag', 'page'))->with($meta);
@@ -72,7 +72,7 @@ class FrontendController extends Controller
             $meta['meta_title'] = 'Tìm kiếm cho từ khóa ' . $keyword;
             $meta['meta_desc'] = 'Tìm kiếm cho từ khóa ' . $keyword;
             $meta['meta_keywords'] = $keyword;
-            $meta['meta_image'] = url('/frontend/images/logo.png');
+            $meta['meta_image'] = url(Setting::get('website_logo_pc'));
             $meta['meta_url'] = route('frontend.search');
 
             return view('frontend.search', compact('posts', 'keyword', 'page'))->with($meta);
@@ -90,7 +90,7 @@ class FrontendController extends Controller
         $meta['meta_title'] = Setting::get('meta_video_title');
         $meta['meta_desc'] = Setting::get('meta_video_desc');
         $meta['meta_keywords'] = Setting::get('meta_video_keywords');
-        $meta['meta_image'] = url('/frontend/images/logo.png');
+        $meta['meta_image'] = url(Setting::get('website_logo_pc'));
         $meta['meta_url'] = route('frontend.video');
 
         $mainVideo = null;
@@ -128,7 +128,7 @@ class FrontendController extends Controller
         $meta['meta_title'] = Setting::get('meta_contact_title');
         $meta['meta_desc'] = Setting::get('meta_contact_desc');
         $meta['meta_keywords'] = Setting::get('meta_contact_keywords');
-        $meta['meta_image'] = url('/frontend/images/logo.png');
+        $meta['meta_image'] = url(Setting::get('website_logo_pc'));
         $meta['meta_url'] = route('frontend.contact');
 
 
@@ -217,7 +217,7 @@ class FrontendController extends Controller
                 $meta['meta_title'] = $category->name;
                 $meta['meta_desc'] = $category->desc;
                 $meta['meta_keywords'] = "";
-                $meta['meta_image'] = url('/frontend/images/logo.png');
+                $meta['meta_image'] = url(Setting::get('website_logo_pc'));
                 $meta['meta_url'] = route('frontend.main', $category->slug);
 
                 return view('frontend.category', compact(

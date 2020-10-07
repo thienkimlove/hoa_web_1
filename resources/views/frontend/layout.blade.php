@@ -69,8 +69,8 @@
     <div class="container">
         <h1 class="clearFix">
             <a href="#" class="logo" title="Logo">
-                <img src="/frontend/imgs/logo.png" alt="Vitamin C" width="225" height="125" class="pc">
-                <img src="/frontend/imgs/logosp.png" alt="Vitamin C" width="295" height="100" class="sp">
+                <img src="{{ url(\App\Helpers::configGet('website_logo_pc'))  }}" alt="Vitamin C" width="225" height="125" class="pc">
+                <img src="{{ url(\App\Helpers::configGet('website_logo_sp')) }}" alt="Vitamin C" width="295" height="100" class="sp">
             </a>
         </h1>
         <ul id="globalNav" class="pc">
@@ -168,9 +168,9 @@
     </div>
     <div class="copyRight">
         <div class="container">
-            <p class="copy">{{ \Backpack\Settings\app\Models\Setting::get('company_copyright') }}</p>
+            <p class="copy">{{ \App\Helpers::configGet('company_copyright') }}</p>
             <p class="address">
-                {{ \Backpack\Settings\app\Models\Setting::get('company_contact') }}
+                {{ \App\Helpers::configGet('company_contact') }}
             </p>
         </div>
     </div>

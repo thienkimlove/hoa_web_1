@@ -12,6 +12,7 @@ namespace App;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Video;
+use Backpack\Settings\app\Models\Setting;
 
 class Helpers
 {
@@ -109,8 +110,17 @@ class Helpers
         ],
 
         [
-            'key'         => 'website_logo',
-            'name'        => 'Website Logo',
+            'key'         => 'website_logo_pc',
+            'name'        => 'Website Logo Pc',
+            'description' => 'For SEO',
+            'value'       => '',
+            'field'       => '{"name":"value","label":"Value","type":"browse"}', //text, textarea
+            'active'      => 1,
+        ],
+
+        [
+            'key'         => 'website_logo_sp',
+            'name'        => 'Website Logo Mobile',
             'description' => 'For SEO',
             'value'       => '',
             'field'       => '{"name":"value","label":"Value","type":"browse"}', //text, textarea
@@ -191,6 +201,11 @@ class Helpers
     public static function getImageUrlBySize($path, $w, $h)
     {
         return url('img/cache/'.$w.'x'.$h.'/'.str_replace('uploads/', '', $path));
+    }
+
+    public static function configGet($key)
+    {
+        return Setting::get($key);
     }
 
 }
