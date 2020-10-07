@@ -7,7 +7,7 @@
 
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('tag') }}'><i class='nav-icon la la-key'></i> Từ Khóa </a></li>
 
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('video') }}'><i class='nav-icon la la-video-camera'></i> Videos</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('video') }}'><i class='nav-icon la la-video-camera'></i> Các Video </a></li>
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}\"><i class="nav-icon la la-files-o"></i> <span>Quản lý Files</span></a></li>
 
