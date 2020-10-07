@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="vi" class="no-js">
 <head>
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'/>
+    <meta content='GCL' name='generator'/>
+    <title>{{$meta_title}}</title>
+
+    <meta property="og:title" content="{{$meta_title}}">
+    <meta property="og:description" content="{{$meta_desc}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{$meta_url}}">
+    <meta property="og:image" content="{{$meta_image}}">
+    <meta property="og:site_name" content="Cà gai leo Tuệ Linh">
+    <meta property="fb:app_id" content="188252524956805" />
+
+    <meta name="twitter:card" content="Card">
+    <meta name="twitter:url" content="{{$meta_url}}">
+    <meta name="twitter:title" content="{{$meta_title}}">
+    <meta name="twitter:description" content="{{$meta_desc}}">
+    <meta name="twitter:image" content="{{$meta_image}}">
+
+
+    <meta itemprop="name" content="{{$meta_title}}">
+    <meta itemprop="description" content="{{$meta_desc}}">
+    <meta itemprop="image" content="{{$meta_image}}">
+
+    <meta name="ABSTRACT" content="{{$meta_desc}}"/>
+    <meta http-equiv="REFRESH" content="1200"/>
+    <meta name="REVISIT-AFTER" content="1 DAYS"/>
+    <meta name="DESCRIPTION" content="{{$meta_desc}}"/>
+    <meta name="KEYWORDS" content="{{$meta_keywords}}"/>
+    <meta name="ROBOTS" content="index,follow"/>
+    <meta name="AUTHOR" content="Cà gai leo Tuệ Linh"/>
+    <meta name="RESOURCE-TYPE" content="DOCUMENT"/>
+    <meta name="DISTRIBUTION" content="GLOBAL"/>
+    <meta name="COPYRIGHT" content="Copyright 2013 by Goethe"/>
+    <meta name="Googlebot" content="index,follow,archive" />
+    <meta name="RATING" content="GENERAL"/>
+
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-570f69bb385fe2f2"></script>
     <link rel="stylesheet" href="/frontend/css/vitaminc.css" type="text/css"/>
-    <title>Home | Vitamin C</title>    
     <script src="/frontend/js/modernizr.js" type="text/javascript"></script>
 </head>
 <body>
@@ -134,9 +168,9 @@
     </div>
     <div class="copyRight">
         <div class="container">
-            <p class="copy">MỌI THÔNG TIN ĐỀU BẢN QUYỀN ĐỀU THUỘC VỀ CÔNG TY TNHH TUỆ LINH</p>
+            <p class="copy">{{ \Backpack\Settings\app\Models\Setting::get('company_copyright') }}</p>
             <p class="address">
-                Tầng 5, Tòa nhà 29 T1 - Hoàng Đạo Thúy - Trung Hòa - Cầu Giấy - Hà Nội- Điện thoại: (04) 62824344 - Fax: 04.62824263
+                {{ \Backpack\Settings\app\Models\Setting::get('company_contact') }}
             </p>
         </div>
     </div>

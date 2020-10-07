@@ -40,6 +40,73 @@ class Helpers
             'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
             'active'      => 1,
         ],
+        [
+            'key'         => 'meta_contact_title',
+            'name'        => 'Meta Contact Title',
+            'description' => 'For SEO',
+            'value'       => 'suckhoe248.com',
+            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
+            'active'      => 1,
+        ],
+        [
+            'key'         => 'meta_contact_desc',
+            'name'        => 'Meta Contact Description',
+            'description' => 'For SEO',
+            'value'       => 'suckhoe248.com',
+            'field'       => '{"name":"value","label":"Value","type":"textarea"}', //text, textarea
+            'active'      => 1,
+        ],
+        [
+            'key'         => 'meta_contact_keywords',
+            'name'        => 'Meta Contact Keywords',
+            'description' => 'For SEO',
+            'value'       => 'suckhoe248.com',
+            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
+            'active'      => 1,
+        ],
+
+        [
+            'key'         => 'meta_video_title',
+            'name'        => 'Meta Video Title',
+            'description' => 'For SEO',
+            'value'       => 'suckhoe248.com',
+            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
+            'active'      => 1,
+        ],
+        [
+            'key'         => 'meta_video_desc',
+            'name'        => 'Meta Video Description',
+            'description' => 'For SEO',
+            'value'       => 'suckhoe248.com',
+            'field'       => '{"name":"value","label":"Value","type":"textarea"}', //text, textarea
+            'active'      => 1,
+        ],
+        [
+            'key'         => 'meta_video_keywords',
+            'name'        => 'Meta Video Keywords',
+            'description' => 'For SEO',
+            'value'       => 'suckhoe248.com',
+            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
+            'active'      => 1,
+        ],
+
+        [
+            'key'         => 'company_copyright',
+            'name'        => 'Copy Right',
+            'description' => 'For SEO',
+            'value'       => 'MỌI THÔNG TIN ĐỀU BẢN QUYỀN ĐỀU THUỘC VỀ suckhoe248.com',
+            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
+            'active'      => 1,
+        ],
+
+        [
+            'key'         => 'company_contact',
+            'name'        => 'Copy Right',
+            'description' => 'For SEO',
+            'value'       => 'Tầng 5, Tòa nhà 29 T1 - Hoàng Đạo Thúy - Trung Hòa - Cầu Giấy - Hà Nội- Điện thoại: (04) 62824344 - Fax: 04.62824263',
+            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
+            'active'      => 1,
+        ],
 
     ];
 

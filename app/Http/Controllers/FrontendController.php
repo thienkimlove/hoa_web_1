@@ -87,9 +87,9 @@ class FrontendController extends Controller
 
         $meta = [];
 
-        $meta['meta_title'] = Setting::get('meta_index_title');
-        $meta['meta_desc'] = Setting::get('meta_index_desc');
-        $meta['meta_keywords'] = Setting::get('meta_index_keywords');
+        $meta['meta_title'] = Setting::get('meta_video_title');
+        $meta['meta_desc'] = Setting::get('meta_video_desc');
+        $meta['meta_keywords'] = Setting::get('meta_video_keywords');
         $meta['meta_image'] = url('/frontend/images/logo.png');
         $meta['meta_url'] = route('frontend.video');
 
@@ -125,9 +125,9 @@ class FrontendController extends Controller
         $page = 'lien-he';
         $meta = [];
 
-        $meta['meta_title'] = Setting::get('meta_index_title');
-        $meta['meta_desc'] = Setting::get('meta_index_desc');
-        $meta['meta_keywords'] = Setting::get('meta_index_keywords');
+        $meta['meta_title'] = Setting::get('meta_contact_title');
+        $meta['meta_desc'] = Setting::get('meta_contact_desc');
+        $meta['meta_keywords'] = Setting::get('meta_contact_keywords');
         $meta['meta_image'] = url('/frontend/images/logo.png');
         $meta['meta_url'] = route('frontend.contact');
 
