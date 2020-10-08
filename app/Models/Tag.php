@@ -25,7 +25,7 @@ class Tag extends Model
         return [
             'slug' => [
                 'source' => 'name',
-                'onUpdate' => true,
+                'onUpdate' => false,
             ]
         ];
     }
