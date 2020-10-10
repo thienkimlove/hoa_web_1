@@ -159,8 +159,8 @@
                         @endforeach
                     @endif
 
-                    <li><a href="{{ route('frontend.video') }}">Videos</a></li>
-                    <li><a href="{{ route('frontend.contact') }}">Liên hệ</a></li>
+                    <li><a {{(isset($page) && $page == 'video') ? 'active' : ''}} href="{{ route('frontend.video') }}">Videos</a></li>
+                    <li><a {{(isset($page) && $page == 'lien-he') ? 'active' : ''}} href="{{ route('frontend.contact') }}">Liên hệ</a></li>
                 </ul>
             </div>
         </div>
