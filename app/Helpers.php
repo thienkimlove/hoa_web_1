@@ -251,4 +251,31 @@ class Helpers
         return Setting::get($key);
     }
 
+    public static function getMainCategoryHavePosts()
+    {
+        $categories = Category::whereNull('parent_id')->get();
+
+        $results = [];
+
+        foreach ($categories as $category) {
+            $posts = self::getCategoryPosts($category);
+
+            if ($posts->count() > 0) {
+                $results[] = $category;
+            }
+        }
+        return $results;
+    }
+
+    public static function getCategoryPosts($category, $limit=3)
+    {
+        $cateIds = ($category->children->count() > 0) ? $category->children->pluck('id')->all() : [$category->id];
+
+        return Post::publish()
+            ->whereIn('category_id', $cateIds)
+            ->latest('updated_at')
+            ->limit($limit)
+            ->get();
+    }
+
 }
