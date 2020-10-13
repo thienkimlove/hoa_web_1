@@ -168,6 +168,30 @@ class Helpers
             'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
             'active'      => 1,
         ],
+        [
+            'key'         => 'facebook_link',
+            'name'        => 'Facebook Link',
+            'description' => 'For SEO',
+            'value'       => '#',
+            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
+            'active'      => 1,
+        ],
+        [
+            'key'         => 'analytics',
+            'name'        => 'Analytics Code',
+            'description' => 'For SEO',
+            'value'       => '',
+            'field'       => '{"name":"value","label":"Value","type":"textarea"}', //text, textarea
+            'active'      => 1,
+        ],
+        [
+            'key'         => 'webmaster',
+            'name'        => 'Webmaster Code',
+            'description' => 'For SEO',
+            'value'       => '',
+            'field'       => '{"name":"value","label":"Value","type":"textarea"}', //text, textarea
+            'active'      => 1,
+        ],
 
 
     ];

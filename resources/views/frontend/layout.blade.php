@@ -93,8 +93,8 @@
                 @endforeach
             @endif
 
-            <li><a href="{{ route('frontend.video') }}">Videos</a></li>
-            <li><a href="{{ route('frontend.contact') }}">Liên hệ</a></li>
+            <li><a class="{{(isset($page) && $page == 'video') ? 'active' : ''}}" href="{{ route('frontend.video') }}">Videos</a></li>
+            <li><a class="{{(isset($page) && $page == 'lien-he') ? 'active' : ''}}" href="{{ route('frontend.contact') }}">Liên hệ</a></li>
         </ul>
         <a href="#" title="Menu" class="sp btnMenu" id="btnMenu">Menu</a>
     </div>
@@ -159,8 +159,8 @@
                         @endforeach
                     @endif
 
-                    <li><a {{(isset($page) && $page == 'video') ? 'active' : ''}} href="{{ route('frontend.video') }}">Videos</a></li>
-                    <li><a {{(isset($page) && $page == 'lien-he') ? 'active' : ''}} href="{{ route('frontend.contact') }}">Liên hệ</a></li>
+                    <li><a class="{{(isset($page) && $page == 'video') ? 'active' : ''}}" href="{{ route('frontend.video') }}">Videos</a></li>
+                    <li><a class="{{(isset($page) && $page == 'lien-he') ? 'active' : ''}}" href="{{ route('frontend.contact') }}">Liên hệ</a></li>
                 </ul>
             </div>
         </div>
@@ -191,5 +191,7 @@
 <script type="text/javascript" src="/frontend/js/scrollReveal.js"></script>
 <script type="text/javascript" src="/frontend/js/common.js"></script>
 @yield('after_scripts')
+{!! \App\Helpers::configGet('analytics') !!}
+{!! \App\Helpers::configGet('webmaster') !!}
 </body>
 </html>
