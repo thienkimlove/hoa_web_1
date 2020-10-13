@@ -127,7 +127,7 @@ class PostCrudController extends CrudController
                 'type'          => 'ckeditor',
 
                 // optional:
-                'extra_plugins' => ['justify'],
+                'extra_plugins' => ['justify', 'font'],
                 'options'       => [
                     'autoGrow_minHeight'   => 200,
                     'autoGrow_bottomSpace' => 50,
