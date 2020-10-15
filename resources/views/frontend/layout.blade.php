@@ -42,8 +42,10 @@
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-570f69bb385fe2f2"></script>
     <link rel="stylesheet" href="/frontend/css/vitaminc.css" type="text/css"/>
     <script src="/frontend/js/modernizr.js" type="text/javascript"></script>
+    {!! \App\Helpers::configGet('webmaster') !!}
 </head>
 <body>
+{!! \App\Helpers::configGet('analytics') !!}
 <div class="menuIcon pc">
     <div class="listIcons">
         <ul>
@@ -191,7 +193,5 @@
 <script type="text/javascript" src="/frontend/js/scrollReveal.js"></script>
 <script type="text/javascript" src="/frontend/js/common.js"></script>
 @yield('after_scripts')
-{!! \App\Helpers::configGet('analytics') !!}
-{!! \App\Helpers::configGet('webmaster') !!}
 </body>
 </html>
