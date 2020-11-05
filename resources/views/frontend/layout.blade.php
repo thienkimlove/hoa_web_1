@@ -193,5 +193,7 @@
 <script type="text/javascript" src="/frontend/js/scrollReveal.js"></script>
 <script type="text/javascript" src="/frontend/js/common.js"></script>
 @yield('after_scripts')
+
+{!! \App\Helpers::configGet('endpage') !!}
 </body>
 </html>

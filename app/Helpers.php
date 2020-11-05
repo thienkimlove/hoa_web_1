@@ -193,12 +193,21 @@ class Helpers
             'active'      => 1,
         ],
 
+        [
+            'key'         => 'endpage',
+            'name'        => 'End Page HTML',
+            'description' => 'For SEO',
+            'value'       => '',
+            'field'       => '{"name":"value","label":"Value","type":"textarea"}', //text, textarea
+            'active'      => 1,
+        ],
+
 
     ];
 
     public static function getMainCategories()
     {
-        return Category::whereNull('parent_id')->get();
+        return Category::where('status', true)->whereNull('parent_id')->get();
     }
 
     public static function getContactStatuses()
@@ -239,11 +248,11 @@ class Helpers
             ->get();
     }
 
-    public static function getLatestPosts()
+    public static function getLatestPosts($limit=6)
     {
         return Post::where('status', true)
             ->latest('created_at')
-            ->limit(6)
+            ->limit($limit)
             ->get();
     }
 
@@ -256,12 +265,12 @@ class Helpers
             ->get();
     }
 
-    public static function getHighLightIndexPosts()
+    public static function getHighLightIndexPosts($limit=4)
     {
         return Post::where('status', true)
             ->where('is_highlight_index', true)
             ->latest('created_at')
-            ->limit(4)
+            ->limit($limit)
             ->get();
     }
 
@@ -277,7 +286,7 @@ class Helpers
 
     public static function getMainCategoryHavePosts()
     {
-        $categories = Category::whereNull('parent_id')->get();
+        $categories = Category::where('status', true)->whereNull('parent_id')->get();
 
         $results = [];
 
@@ -300,6 +309,12 @@ class Helpers
             ->latest('updated_at')
             ->limit($limit)
             ->get();
+    }
+
+    public static function truncateWords($string, $width, $etc = ' ..')
+    {
+        $wrapped = explode('$trun$', wordwrap($string, $width, '$trun$', false), 2);
+        return $wrapped[0] . (isset($wrapped[1]) ? $etc : '');
     }
 
 }

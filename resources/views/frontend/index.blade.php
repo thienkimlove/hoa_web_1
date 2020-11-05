@@ -6,11 +6,12 @@
         <div class="container">
             <div class="contentLeft">
                 <!-- /endboxRecommended -->
-                <div class="boxNews clearFix">
+                @foreach (\App\Helpers::getMainCategoryHavePosts() as $mainCate)
+                    <div class="boxNews clearFix">
                     <h3 class="globalTitle">
-                        <a href="#">Bài viết mới nhất</a>
+                        <a href="#">{{ $mainCate->name }}</a>
                     </h3>
-                    @if ($latestPosts = \App\Helpers::getLatestPosts())
+                    @if ($latestPosts = \App\Helpers::getCategoryPosts($mainCate, 6))
                         @foreach ($latestPosts->chunk(3) as $latest3Posts)
                             <div class="listNews clearFix">
                                 @foreach ($latest3Posts as $latest3Post)
@@ -21,7 +22,7 @@
                                         </a>
                                         <p>
                                             <a href="{{ url($latest3Post->slug.'.html') }}">
-                                                {{ $latest3Post->name }}
+                                                {{$latest3Post->name}}
                                             </a>
                                         </p>
                                         <span class="datePost">{{ $latest3Post->updated_at->format('d/m/Y') }}</span>
@@ -32,6 +33,7 @@
                         @endforeach
                     @endif
                 </div>
+                @endforeach
                 <!-- /endboxNews -->
                 <div class="boxConsult">
                     <div class="titleConsult">
@@ -47,7 +49,7 @@
                                 @foreach ($highlightPosts as $highlightPost)
                                     <li>
                                         <a href="{{ url($highlightPost->slug.'.html') }}">
-                                            {{ $highlightPost->name }}
+                                            {{ \App\Helpers::truncateWords($highlightPost->name, 50) }}
                                         </a>
                                     </li>
                                 @endforeach
